@@ -26,3 +26,12 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function getData() {
+  fetch('/my-data-url')  // sends a request to /my-data-url
+  .then(response => response.json()) // parses the response as JSON
+  .then((message) => { // now we can reference the fields in myObject!
+   document.getElementById('data-container').innerText = message;
+});
+}
+
